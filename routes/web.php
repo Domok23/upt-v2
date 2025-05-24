@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\LanguageController;
@@ -109,3 +110,9 @@ Route::get('/{lang?}/{seo_url_slug}', [HomeController::class, 'SEOByLang'])->nam
 // ..if page by name and language( ex: www.site.com/ar/about )
 Route::get('/{lang?}/topic/{id}', [HomeController::class, 'topicByLang'])->name('FrontendPageByLang');
 // .. End of Frontend Route
+
+// Storage Link
+Route::get('/storage-link', function () {
+    Artisan::call('storage:link');
+    return 'Storage link created successfully.';
+});
