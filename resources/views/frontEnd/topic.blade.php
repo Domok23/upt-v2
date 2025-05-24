@@ -546,7 +546,7 @@
                                 @endif
                             </ul>
                             <div class="pull-right">
-                                {{ __('frontend.share') }} :
+                                {{-- {{ __('frontend.share') }} : --}}
                                 <ul class="social-network share">
                                     <li><a href="{{ Helper::SocialShare("facebook", $PageTitle)}}" class="facebook"
                                            data-placement="top"
